@@ -31,11 +31,8 @@ jobs:
         run: npm run generate:report
         if: always()
 
-      - name: Create directory
-        run: mkdir -p mochawesome-report
-
       - name: Upload test report
         uses: actions/upload-artifact@v2
         with:
           name: test-report
-          path: mochawesome-report/*.html
+          path: reports/mochawesome/*.html
